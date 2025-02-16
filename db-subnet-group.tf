@@ -2,11 +2,11 @@
 
 resource "aws_db_subnet_group" "my_db_subnet_grp" {
 
-  subnet_ids = [aws_subnet.db_subnet_ids.id, aws_subnet.db_subnet_ids.id]
-  name       = "vi_subnet_group"
+  name = "vi_subnet_group"
+  subnet_ids = data.aws_subnets.db_subnet_ids.ids
 
   tags = {
-    Name = "my db subnet group"
+    Name = "my db sub grp"
   }
-
+  
 }

@@ -2,7 +2,7 @@ variable "instance_class" {
 
   description = "Defining db instance class"
   type        = string
-  default     = "db.t2.micro"
+  default     = "db.c6gd.medium"
 
 }
 

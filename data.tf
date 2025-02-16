@@ -10,8 +10,13 @@ data "aws_vpc" "my_vpc" {
 data "aws_subnets" "db_subnet_ids" {
 
   filter {
+    name = "vpc-id"
+    values = [data.aws_vpc.my_vpc.id]
+  }
+
+  filter {
     name   = "tag:Name"
-    values = ["vi_mysql_db"]
+    values = ["vi_private*"]
   }
 
 }
